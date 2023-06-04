@@ -1,0 +1,56 @@
+﻿<Page x:Class="CyberClub.Pages.TariffPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CyberClub.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TariffPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Separator Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Height="1" Background="Gray" />
+        <Image Source="logo.png"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"  HorizontalAlignment="Right">
+            <TextBlock Text="{Binding User.Nickname}" FontSize="30" VerticalAlignment="Center" Foreground="White" />
+            <Image Source="{Binding User.Img}"  Width="60" Height="60" Margin="0,0,5,0" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2" Height="65">
+            <Button x:Name="ProfileButton" FontSize="20" Height="40" Foreground="White" Background="#100000" Content="Перейти в профиль" Click="NavigateToProfilePage" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <TextBlock Text="Balance: " FontSize="20"  Foreground="White"/>
+                <TextBlock Text="{Binding User.Balance}" FontSize="20"  Foreground="White"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Grid Grid.Row="1" Grid.RowSpan="2" Margin="0,0,10,0">
+            <StackPanel Grid.RowSpan="2">
+                <Button x:Name="menuButton" FontSize="20" Height="50" Foreground="White" BorderBrush="Aqua" Background="#100000" Content="Меню" Click="ToggleMenu" />
+                <StackPanel x:Name="menuPanel" Visibility="Collapsed">
+                    <Button x:Name="newsButton" Height="40" FontSize="20" Foreground="White" Background="#100000" Content="Новости" Click="NavigateToNewsPage" />
+                    <Button x:Name="eventsButton" Height="40" FontSize="20" Foreground="White" Background="#100000" Content="События" Click="NavigateToEventsPage" />
+                    <Button x:Name="bookingButton" Height="40" FontSize="20" Foreground="White" Background="#100000" Content="Бронирование столов" Click="NavigateToBookingPage" />
+                    <Button x:Name="tariffButton" Height="40" FontSize="20" Foreground="White" Background="#100000" Content="Выбор тарифа" Click="NavigateToTariffPage" />
+                    <Button x:Name="chatButton" Height="40"  FontSize="20" Foreground="White" Background="#100000" Content="Общий чат" Click="NavigateToChatPage" />
+                    <Button x:Name="aboutButton" Height="40" FontSize="20" Foreground="White" Background="#100000" Content="О компьютерном клубе" Click="NavigateToAboutPage" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+
+        
+    </Grid>
+</Page>
+

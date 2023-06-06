@@ -132,6 +132,15 @@ namespace CyberClub.Pages
                     {
                         listViewItem.Background = Brushes.Red;
                     }
+                    if (table.IdUser == null)
+                    {
+                        listViewItem.Background = Brushes.Aquamarine;
+                    }
+                    if (((table.IdUser != null) && table.IdUser != CurrentUser.Id) && table.IdType == 2)
+                    {
+                        listViewItem.Background = Brushes.Purple;
+                    }
+
                 }
             }
         }
@@ -145,7 +154,6 @@ namespace CyberClub.Pages
             }
 
 
-            // Установка IdUser для выбранных элементов
             foreach (var table in LViewTable.SelectedItems)
             {
                 var selectedTable = (Table)table;
@@ -158,10 +166,8 @@ namespace CyberClub.Pages
                 selectedTable.IsBooked = true;
             }
 
-            // Здесь вы можете выполнить необходимые действия для сохранения изменений в базе данных или других операций
             DBConnection.connection.SaveChanges();
 
-            // Установка флага IsBooked для выбранных элементов
             foreach (var table in LViewTable.Items)
             {
                 var listItem = (Table)table;

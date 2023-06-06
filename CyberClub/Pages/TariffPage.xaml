@@ -48,9 +48,26 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
+        <ListView Grid.Row="1" Grid.Column="1" Background="Blue" x:Name="TariffsListView" ItemsSource="{Binding Tariffs}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+                        <StackPanel >
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Description}"/>
+                            <!-- Добавьте другие свойства, которые хотите отобразить -->
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-
-        
     </Grid>
+    
 </Page>
 

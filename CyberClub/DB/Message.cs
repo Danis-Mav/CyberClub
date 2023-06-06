@@ -11,8 +11,7 @@ namespace CyberClub.DB
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-
+    
     public partial class Message
     {
         public int Id { get; set; }
@@ -22,5 +21,6 @@ namespace CyberClub.DB
         public Nullable<System.DateTime> DateTime { get; set; }
     
         public virtual Chat Chat { get; set; }
-        public virtual User User { get; set; }    }
+        public virtual User User { get; set; }
+    }
 }

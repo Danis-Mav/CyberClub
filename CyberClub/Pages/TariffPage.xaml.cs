@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -36,13 +37,20 @@ namespace CyberClub.Pages
 
         public event PropertyChangedEventHandler PropertyChanged;
         public static User User { get; set; }
+        public static ObservableCollection<Tariff> Tariffs { get; set; }
+
         public TariffPage(User user)
         {
             InitializeComponent();
+            Tariffs = new ObservableCollection<Tariff>(DBConnection.connection.Tariff.Where(x => x.IsDeleted == false).ToList());
+            DataContext = this;
+            TariffsListView.ItemsSource = Tariffs;
             User = user;
             DataContext = user;
         }
-        protected virtual void OnPropertyChanged(string propertyName)
+        
+        
+    protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

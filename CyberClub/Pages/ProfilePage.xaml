@@ -6,17 +6,17 @@
       xmlns:local="clr-namespace:CyberClub.Pages"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1000" d:DesignWidth="1500"
       Title="ProfilePage">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100px"/>
+            <ColumnDefinition Width="200px"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100px"/>
+            <RowDefinition Height="200px"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -24,38 +24,38 @@
         </Grid.RowDefinitions>
         <Image Source="logo.png"/>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="Nickname: " Margin="5" FontFamily="Candara Light" FontSize="20" Foreground="Wheat"/>
-            <TextBlock Text="{Binding User.Nickname}" Foreground="White" x:Name="Nickname" FontSize="25" FontFamily="Candara"/>
-            <TextBox x:Name="tbFullName" Width="200" Background="White" FontSize="30" FontFamily="Candara" Visibility="Hidden"/>
+            <TextBlock Text="Nickname: " Margin="20" FontFamily="Candara Light" FontSize="40" Foreground="Wheat"/>
+            <TextBlock Text="{Binding User.Nickname}" Margin="20" Foreground="White" x:Name="Nickname" FontSize="30" FontFamily="Candara"/>
+            <TextBox x:Name="tbFullName" Width="400" Background="White" FontSize="30" FontFamily="Candara" Visibility="Hidden"/>
             
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="Login: " Margin="5" FontFamily="Candara Light" FontSize="20" Foreground="Wheat"/>
-            <TextBlock Text="{Binding User.Login}" Foreground="White" x:Name="Login" FontSize="25" FontFamily="Candara"/>
+            <TextBlock Text="Login: " Margin="20" FontFamily="Candara Light" FontSize="40" Foreground="Wheat"/>
+            <TextBlock Text="{Binding User.Login}"  Margin="20" Foreground="White" x:Name="Login" FontSize="30" FontFamily="Candara"/>
             <TextBox x:Name="tbLogin"  Width="200" Background="White" FontSize="30" FontFamily="Candara" Visibility="Hidden"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="Password: " Margin="5" FontFamily="Candara Light" FontSize="20" Foreground="Wheat"/>
-            <TextBlock Text="{Binding User.Password}" Foreground="White" x:Name="Password" FontSize="25" FontFamily="Candara"/>
-            <TextBox x:Name="tbPassword" Width="200" Background="White" FontSize="30" FontFamily="Candara" Visibility="Hidden"/>
+            <TextBlock Text="Password: " Margin="20" FontFamily="Candara Light" FontSize="40" Foreground="Wheat"/>
+            <TextBlock Text="{Binding User.Password}" Margin="20" Foreground="White" x:Name="Password" FontSize="30" FontFamily="Candara"/>
+            <TextBox x:Name="tbPassword" Width="200" Margin="20" Background="White" FontSize="30" FontFamily="Candara" Visibility="Hidden"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="Balance: " Margin="5" FontFamily="Candara Light" FontSize="20" Foreground="Wheat"/>
-            <TextBlock Text="{Binding User.Balance}" Foreground="White" x:Name="Balance" FontSize="25" FontFamily="Candara"/>
-            <TextBox x:Name="tbBalance" Width="100" Background="White" FontSize="30" FontFamily="Candara" Visibility="Hidden"/>
+            <TextBlock Text="Balance: " Margin="20" FontFamily="Candara Light" FontSize="40" Foreground="Wheat"/>
+            <TextBlock Text="{Binding User.Balance}" Margin="20" Foreground="White" x:Name="Balance" FontSize="30" FontFamily="Candara"/>
+            <TextBox x:Name="tbBalance" Width="200" Background="White" FontSize="30" FontFamily="Candara" Visibility="Hidden"/>
         </StackPanel>
-        <Button x:Name="BalanceUp" Grid.Row="0" Grid.Column="1" Content="Пополнить" FontSize="15"  Background="#FFC72910" Click="BalanceClick" Margin="30" />
+        <Button x:Name="BalanceUp" Grid.Row="0" Grid.Column="1" Content="Пополнить" FontSize="30" Height="50"  Background="Blue" Click="BalanceClick" Margin="30" />
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="Tariff: " Margin="5" FontFamily="Candara Light" FontSize="20" Foreground="Wheat"/>
-            <TextBlock Text="{Binding User.Tariff.Name}" Foreground="White" x:Name="Tariff" FontSize="25" FontFamily="Candara"/>
+            <TextBlock Text="Tariff: " Margin="20" FontFamily="Candara Light" FontSize="40" Foreground="Wheat"/>
+            <TextBlock Text="{Binding User.Tariff.Name}" Margin="20" Foreground="White" x:Name="Tariff" FontSize="30" FontFamily="Candara"/>
         </StackPanel>
-        <Image x:Name="img" Source="{Binding User.Img}" Grid.Column="2" Grid.RowSpan="2" Grid.Row="2" Margin="15" OpacityMask="Red"/>
-        <Button x:Name="Photo" Content="Изменить фото" FontSize="15" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Background="#FFC72910" Click="PhotoClick" Margin="10" BorderBrush="#FFC72929"/>
+        <Image x:Name="img" Source="{Binding User.Img}" Grid.Column="2" Grid.RowSpan="2" Grid.Row="2" Margin="30" OpacityMask="Red"/>
+        <Button x:Name="Photo" Content="Изменить фото" FontSize="30" Height="60" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Background="Blue" Click="PhotoClick" Margin="10" Visibility="Hidden" BorderBrush="#FFC72929"/>
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
-            <Button x:Name="Edit" Content="Редактировать" FontSize="15"   Background="#FFC72910" Click="EditClick" Margin="10" BorderBrush="#FFC72929" Visibility="Visible"/>
-            <Button x:Name="Save" Content="Сохранить" FontSize="15" Grid.Column="1" Grid.Row="4"  Background="#FFC72910" Click="SaveClick" Margin="10"  Visibility="Hidden"/>
+            <Button x:Name="Edit" Content="Редактировать" FontSize="30" Height="60"  Background="Blue" Click="EditClick" Margin="20"  Visibility="Visible"/>
+            <Button x:Name="Save" Content="Сохранить" Height="60" FontSize="30" Grid.Column="1" Grid.Row="4"  Background="Blue" Click="SaveClick" Margin="10"  Visibility="Hidden"/>
         </StackPanel>
         
-        <Button x:Name="Back" Width="100" Content="Назад" FontSize="15" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Background="#FFC72910"  Margin="10" BorderBrush="#FFC72929" Visibility="Visible" Click="Back_Click"/>
+        <Button x:Name="Back"  Height="60" Content="Назад" FontSize="30" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Background="Blue"  Margin="10" Visibility="Visible" Click="Back_Click"/>
     </Grid>
 </Page>

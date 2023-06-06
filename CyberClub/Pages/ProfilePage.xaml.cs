@@ -49,6 +49,7 @@ namespace CyberClub.Pages
             tbFullName.Visibility = Visibility.Hidden;
             tbLogin.Visibility = Visibility.Hidden;
             tbPassword.Visibility = Visibility.Hidden;
+            Photo.Visibility = Visibility.Hidden;
             Save.Visibility = Visibility.Hidden;
             
 
